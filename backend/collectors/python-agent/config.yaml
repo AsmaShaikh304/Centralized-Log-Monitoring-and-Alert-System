@@ -1,0 +1,2 @@
+backend_url: "http://localhost:8080/logs"
+interval: 10
