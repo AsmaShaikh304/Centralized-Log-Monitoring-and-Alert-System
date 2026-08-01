@@ -1,6 +1,6 @@
-CREATE DATABASE clmas_db;
+CREATE DATABASE clmas;
 
-USE clmas_db;
+USE clmas;
 
 CREATE TABLE logs (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
