@@ -1,16 +1,42 @@
-# CLMAS Project
+# Centralized Log Monitoring & Alerting System (CLMAS)
+
+A full-stack log monitoring and alerting application built with Java, Spring Boot, JPA/Hibernate, MySQL, and React.
+
+CLMAS is designed to collect application logs, store them centrally, evaluate configurable alert rules, and generate alert events when matching conditions are detected.
 
 ## Project Overview
-CLMAS (Centralized Log Monitoring and Alerting System) is a full-stack application for collecting, processing, and monitoring logs from multiple sources. It includes:
 
-- **Backend:** Java Spring Boot services to ingest logs, manage alert rules, and send notifications.
-- **Collectors:** Agents in Python, Java, and Node.js to collect logs from various sources.
-- **Log Processing Engine:** Python pipelines for parsing, enriching, and alerting.
-- **Alerting Engine:** Python modules for evaluating rules and sending notifications.
-- **Frontend Dashboard:** React (Vite) UI for monitoring logs and alerts.
-- **Databases:** MySQL for logs/alerts, Elasticsearch for search, Redis for caching.
+The system provides a backend for:
 
----
+- Ingesting application logs through REST APIs
+- Persisting logs in a relational database
+- Creating and managing alert rules
+- Evaluating incoming logs against configured alert conditions
+- Generating alert events when matching conditions are detected
+- Querying stored logs
+- Providing a foundation for notification and monitoring workflows
 
-## Folder Structure
+## Architecture
 
+```text
+Client / Log Source
+        |
+        v
+   REST API
+        |
+        v
+ Spring Boot Backend
+        |
+   +----+----+
+   |         |
+   v         v
+Log Service  Alert Rule Service
+   |         |
+   v         v
+ MySQL     Alert Rules
+   |
+   v
+Alert Event
+   |
+   v
+Notification Service
